@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 	before_action :fetch_post, only: [:show, :edit, :update, :destroy]
 
 	def index 
-	
+		@posts = Post.all.order "created_at DESC"
 	end
 
 	def new 
